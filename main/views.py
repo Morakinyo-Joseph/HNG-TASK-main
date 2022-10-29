@@ -12,7 +12,8 @@ def person_list(request):
     if request.method == 'GET':
         people = SlackPerson.objects.all()
         serializer = SlackPersonSerializer(people, many=True)
-        return JsonResponse(serializer.data, safe=False, headers=header)
+        
+    return JsonResponse(serializer.data, safe=False, headers=header)
 
 
 # from rest_framework.decorators import api_view
